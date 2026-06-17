@@ -1,0 +1,257 @@
+/* ===== TEST ELECTRA — MAIN JS ===== */
+
+// ── Product Data ──────────────────────────────────────────────
+const products = [
+  {
+    id: 1, category: 'laptops', emoji: '💻',
+    brand: 'Voltex', name: 'Voltex ProBook X14 Gen 5',
+    price: 89999, oldPrice: 109999, badge: 'sale',
+    rating: 4.7, reviews: 312
+  },
+  {
+    id: 2, category: 'laptops', emoji: '🖥️',
+    brand: 'NovaTech', name: 'NovaTech Slate Creator 16',
+    price: 124999, oldPrice: null, badge: 'new',
+    rating: 4.9, reviews: 88
+  },
+  {
+    id: 3, category: 'phones', emoji: '📱',
+    brand: 'Aether', name: 'Aether Pulse Z6 Ultra',
+    price: 69999, oldPrice: 79999, badge: 'sale',
+    rating: 4.8, reviews: 547
+  },
+  {
+    id: 4, category: 'phones', emoji: '📲',
+    brand: 'Lumina', name: 'Lumina Vista 14 Pro',
+    price: 54999, oldPrice: null, badge: 'hot',
+    rating: 4.6, reviews: 423
+  },
+  {
+    id: 5, category: 'audio', emoji: '🎧',
+    brand: 'AetherSound', name: 'AetherSound NC-Pro 500',
+    price: 14999, oldPrice: 19999, badge: 'sale',
+    rating: 4.9, reviews: 891
+  },
+  {
+    id: 6, category: 'audio', emoji: '🎵',
+    brand: 'ZenCore', name: 'ZenCore Arc Speaker System',
+    price: 29999, oldPrice: null, badge: 'new',
+    rating: 4.7, reviews: 156
+  },
+  {
+    id: 7, category: 'smarthome', emoji: '🏠',
+    brand: 'Electra', name: 'ElectraHome Hub V3',
+    price: 8999, oldPrice: 11999, badge: 'sale',
+    rating: 4.5, reviews: 234
+  },
+  {
+    id: 8, category: 'smarthome', emoji: '💡',
+    brand: 'LumiHome', name: 'LumiHome Smart Bulb Kit (6-Pack)',
+    price: 3499, oldPrice: null, badge: 'hot',
+    rating: 4.6, reviews: 677
+  },
+  {
+    id: 9, category: 'accessories', emoji: '⌨️',
+    brand: 'Voltex', name: 'Voltex MechKeys Pro Wireless',
+    price: 7499, oldPrice: 8999, badge: 'sale',
+    rating: 4.8, reviews: 342
+  },
+  {
+    id: 10, category: 'accessories', emoji: '🖱️',
+    brand: 'NovaTech', name: 'NovaTech PrecisionMouse X2',
+    price: 4299, oldPrice: null, badge: 'new',
+    rating: 4.7, reviews: 198
+  },
+  {
+    id: 11, category: 'laptops', emoji: '💻',
+    brand: 'ZenCore', name: 'ZenCore Ultrabook S11',
+    price: 74999, oldPrice: 84999, badge: 'sale',
+    rating: 4.5, reviews: 265
+  },
+  {
+    id: 12, category: 'phones', emoji: '📱',
+    brand: 'NovaTech', name: 'NovaTech Flip Foldable 2',
+    price: 99999, oldPrice: null, badge: 'new',
+    rating: 4.4, reviews: 72
+  },
+];
+
+// ── Render Products ───────────────────────────────────────────
+function renderProducts(category = 'all') {
+  const grid = document.getElementById('productsGrid');
+  const filtered = category === 'all'
+    ? products
+    : products.filter(p => p.category === category);
+
+  grid.innerHTML = filtered.map(p => {
+    const badgeClass = { sale: 'badge-sale', new: 'badge-new', hot: 'badge-hot' }[p.badge] || '';
+    const badgeLabel = { sale: 'SALE', new: 'NEW', hot: '🔥 HOT' }[p.badge] || '';
+    const discount = p.oldPrice
+      ? Math.round((1 - p.price / p.oldPrice) * 100)
+      : null;
+
+    return `
+      <div class="product-card" data-category="${p.category}">
+        <div class="product-emoji">${p.emoji}</div>
+        ${p.badge ? `<span class="product-badge ${badgeClass}">${badgeLabel}</span>` : ''}
+        <div>
+          <div class="product-brand">${p.brand}</div>
+          <div class="product-name">${p.name}</div>
+        </div>
+        <div class="product-rating">
+          ${'★'.repeat(Math.floor(p.rating))}${'☆'.repeat(5 - Math.floor(p.rating))}
+          <span>${p.rating} (${p.reviews.toLocaleString()})</span>
+        </div>
+        <div class="product-price-row">
+          <span class="product-price">₹${p.price.toLocaleString('en-IN')}</span>
+          ${p.oldPrice ? `<span class="product-old-price">₹${p.oldPrice.toLocaleString('en-IN')}</span>` : ''}
+          ${discount ? `<span class="product-discount">-${discount}%</span>` : ''}
+        </div>
+        <button class="btn-add" onclick="addToCart('${p.name}', this)">Add to Cart</button>
+      </div>
+    `;
+  }).join('');
+}
+
+// ── Add to Cart Feedback ──────────────────────────────────────
+function addToCart(name, btn) {
+  const original = btn.textContent;
+  btn.textContent = '✓ Added!';
+  btn.style.background = 'var(--accent)';
+  btn.style.color = '#000';
+  setTimeout(() => {
+    btn.textContent = original;
+    btn.style.background = '';
+    btn.style.color = '';
+  }, 1500);
+}
+
+// ── Category Tabs ─────────────────────────────────────────────
+function initTabs() {
+  const tabs = document.querySelectorAll('.tab-btn');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      renderProducts(tab.dataset.category);
+    });
+  });
+}
+
+// ── FAQ Accordion ─────────────────────────────────────────────
+function initFAQ() {
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-q').addEventListener('click', () => {
+      const isOpen = item.dataset.open === 'true';
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.dataset.open = 'false';
+      });
+      // Toggle clicked
+      item.dataset.open = isOpen ? 'false' : 'true';
+    });
+  });
+}
+
+// ── Navbar Scroll State ───────────────────────────────────────
+function initNavbar() {
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+}
+
+// ── Active Nav Link on Scroll ─────────────────────────────────
+function initScrollSpy() {
+  const sections = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('.nav-link');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        links.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+        });
+      }
+    });
+  }, { threshold: 0.4, rootMargin: '-80px 0px 0px 0px' });
+
+  sections.forEach(s => observer.observe(s));
+}
+
+// ── Hamburger Menu ────────────────────────────────────────────
+function initHamburger() {
+  const btn = document.getElementById('hamburger');
+  const links = document.getElementById('navLinks');
+  btn.addEventListener('click', () => {
+    links.classList.toggle('open');
+  });
+  // Close on link click
+  links.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => links.classList.remove('open'));
+  });
+}
+
+// ── Back to Top ───────────────────────────────────────────────
+function initBackToTop() {
+  const btn = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('visible', window.scrollY > 400);
+  }, { passive: true });
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+// ── Smooth Scroll for anchor links ───────────────────────────
+function initSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', e => {
+      const target = document.querySelector(anchor.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+}
+
+// ── Card Entrance Animations ──────────────────────────────────
+function initAnimations() {
+  const style = document.createElement('style');
+  style.textContent = `
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+  `;
+  document.head.appendChild(style);
+
+  const targets = document.querySelectorAll(
+    '.product-card, .service-card, .faq-item, .team-card, .value-item'
+  );
+  targets.forEach(el => el.classList.add('reveal'));
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  targets.forEach(el => obs.observe(el));
+}
+
+// ── INIT ──────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  renderProducts();
+  initTabs();
+  initFAQ();
+  initNavbar();
+  initScrollSpy();
+  initHamburger();
+  initBackToTop();
+  initSmoothScroll();
+  initAnimations();
+});
