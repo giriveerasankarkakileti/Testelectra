@@ -1,0 +1,41 @@
+# ⚡ Test Electra — Electronics Store Website
+
+A fictional electronics store website built with vanilla HTML, CSS, and JavaScript. Fully static — no build tools, no dependencies, ready to deploy on GitHub Pages in minutes.
+
+## Sections
+
+- **Home** — Hero with animated visuals and stats
+- **Products** — 12 fictional products with category filtering
+- **Services** — 6 service offerings (repair, custom PC, smart home, etc.)
+- **About** — Brand story, values, and team
+- **FAQ** — 8 accordion questions
+
+## Deploying to GitHub Pages
+
+1. Create a new repository on GitHub (e.g. `test-electra`)
+2. Upload all files keeping the folder structure:
+   ```
+   index.html
+   css/style.css
+   js/main.js
+   README.md
+   ```
+3. Go to **Settings → Pages**
+4. Under **Source**, select `main` branch and `/ (root)` folder
+5. Click **Save** — your site will be live at `https://yourusername.github.io/test-electra/`
+
+## Tech Stack
+
+- Pure HTML5, CSS3, JavaScript (ES6+)
+- Google Fonts: Space Grotesk + Space Mono
+- Zero external dependencies
+- Responsive down to 320px
+- Accessible (keyboard navigation, ARIA labels, reduced motion support)
+
+## Customisation
+
+All design tokens (colors, fonts, spacing) are in CSS custom properties at the top of `css/style.css`. Product data lives in the `products` array at the top of `js/main.js`.
+
+---
+
+*This is a fictional store created for demonstration/portfolio purposes. All brand names, prices, and products are invented.*
