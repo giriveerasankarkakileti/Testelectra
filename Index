@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Test Electra — Next-Gen Electronics</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="logo">
+        <span class="logo-mark">⚡</span>
+        <span class="logo-text">Test<strong>Electra</strong></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#products" class="nav-link">Products</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+      </ul>
+      <a href="#products" class="btn-nav">Shop Now</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HOME / HERO -->
+  <section id="home" class="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Hyderabad's Premier Electronics Destination</p>
+      <h1 class="hero-title">
+        Power Your <br>
+        <span class="hero-title-accent">Future.</span>
+      </h1>
+      <p class="hero-sub">From bleeding-edge laptops to smart home ecosystems — Test Electra brings tomorrow's technology to your hands today.</p>
+      <div class="hero-actions">
+        <a href="#products" class="btn-primary">Explore Products</a>
+        <a href="#services" class="btn-ghost">Our Services →</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">1,200<span class="stat-plus">+</span></span>
+          <span class="stat-label">Products</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">48k<span class="stat-plus">+</span></span>
+          <span class="stat-label">Happy Customers</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">12</span>
+          <span class="stat-label">Years in Business</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-device-frame">
+        <div class="hero-device-inner">
+          <div class="device-glow"></div>
+          <div class="device-screen">
+            <div class="screen-bar"></div>
+            <div class="screen-icon">💻</div>
+            <div class="screen-text">ElectraOS™ Ready</div>
+          </div>
+          <div class="device-badge">NEW</div>
+        </div>
+      </div>
+      <div class="floating-chip chip-1">🔋 Fast Charge</div>
+      <div class="floating-chip chip-2">📡 5G Ready</div>
+      <div class="floating-chip chip-3">🔒 Secure</div>
+    </div>
+  </section>
+
+  <!-- FEATURED BANNER -->
+  <div class="ticker-wrap">
+    <div class="ticker">
+      <span>Free Delivery on Orders Above ₹2,999 &nbsp;⚡&nbsp;</span>
+      <span>1-Year Warranty on All Products &nbsp;⚡&nbsp;</span>
+      <span>EMI Starting at ₹499/month &nbsp;⚡&nbsp;</span>
+      <span>Certified Pre-Owned Devices Available &nbsp;⚡&nbsp;</span>
+      <span>Same-Day Delivery in Hyderabad &nbsp;⚡&nbsp;</span>
+      <span>Free Delivery on Orders Above ₹2,999 &nbsp;⚡&nbsp;</span>
+      <span>1-Year Warranty on All Products &nbsp;⚡&nbsp;</span>
+      <span>EMI Starting at ₹499/month &nbsp;⚡&nbsp;</span>
+      <span>Certified Pre-Owned Devices Available &nbsp;⚡&nbsp;</span>
+      <span>Same-Day Delivery in Hyderabad &nbsp;⚡&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <section id="products" class="section products-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">What We Carry</p>
+        <h2 class="section-title">Our Product Range</h2>
+        <p class="section-sub">Curated tech across every category — from everyday essentials to professional-grade gear.</p>
+      </div>
+
+      <div class="category-tabs" id="categoryTabs">
+        <button class="tab-btn active" data-category="all">All</button>
+        <button class="tab-btn" data-category="laptops">Laptops</button>
+        <button class="tab-btn" data-category="phones">Phones</button>
+        <button class="tab-btn" data-category="audio">Audio</button>
+        <button class="tab-btn" data-category="accessories">Accessories</button>
+        <button class="tab-btn" data-category="smarthome">Smart Home</button>
+      </div>
+
+      <div class="products-grid" id="productsGrid">
+        <!-- JS renders products here -->
+      </div>
+
+      <div class="products-cta">
+        <a href="#services" class="btn-primary">Need a Custom Build? Talk to Us →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section services-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">What We Do</p>
+        <h2 class="section-title">Services That Go Further</h2>
+        <p class="section-sub">We don't just sell electronics — we support, repair, configure, and consult on every device we touch.</p>
+      </div>
+      <div class="services-grid">
+
+        <div class="service-card featured-service">
+          <div class="service-icon">🛠️</div>
+          <h3>Device Repair & Diagnostics</h3>
+          <p>Cracked screens, failing batteries, water damage — our certified technicians fix it all. Most repairs completed same day with genuine parts and a 90-day service guarantee.</p>
+          <ul class="service-list">
+            <li>Screen replacement (all brands)</li>
+            <li>Battery & charging port repair</li>
+            <li>Motherboard diagnostics</li>
+            <li>Data recovery services</li>
+          </ul>
+          <span class="service-tag">Most Popular</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🖥️</div>
+          <h3>Custom PC Building</h3>
+          <p>Tell us your workload — gaming, video editing, ML, or office — and we'll spec, source, and assemble a machine built exactly for you.</p>
+          <ul class="service-list">
+            <li>Free consultation & spec sheet</li>
+            <li>Component sourcing at cost</li>
+            <li>Cable management & OS setup</li>
+            <li>3-year build warranty</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🏠</div>
+          <h3>Smart Home Installation</h3>
+          <p>From smart lighting to security cameras and voice assistant hubs, our team will set up and integrate your entire ecosystem in a single visit.</p>
+          <ul class="service-list">
+            <li>Site survey & planning</li>
+            <li>Device pairing & automation</li>
+            <li>Network optimization</li>
+            <li>Post-install walkthrough</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🔄</div>
+          <h3>Trade-In & Upgrade</h3>
+          <p>Upgrade to newer tech without the buyer's guilt. Trade in your old device and get instant credit applied to your purchase — no haggling, no waiting.</p>
+          <ul class="service-list">
+            <li>Instant device valuation</li>
+            <li>Credit applied at checkout</li>
+            <li>Eco-responsible disposal</li>
+            <li>All brands accepted</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">☁️</div>
+          <h3>IT & Cloud Setup</h3>
+          <p>Business or personal — we help you migrate to cloud, set up secure networks, configure backup strategies, and deploy productivity suites.</p>
+          <ul class="service-list">
+            <li>Cloud migration planning</li>
+            <li>VPN & secure access setup</li>
+            <li>Email & collaboration tools</li>
+            <li>Ongoing IT support plans</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🎓</div>
+          <h3>Tech Training & Workshops</h3>
+          <p>Monthly in-store workshops on topics from smartphone photography to building your first PC. Open to all skill levels, all ages.</p>
+          <ul class="service-list">
+            <li>Beginner & advanced tracks</li>
+            <li>Small group sessions (max 12)</li>
+            <li>Take-home resources</li>
+            <li>Certificate of completion</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section about-section">
+    <div class="container about-grid">
+      <div class="about-visual">
+        <div class="about-img-frame">
+          <div class="about-img-inner">
+            <div class="about-store-graphic">
+              <div class="store-shelf">
+                <div class="shelf-item s1">📱</div>
+                <div class="shelf-item s2">💻</div>
+                <div class="shelf-item s3">🎧</div>
+              </div>
+              <div class="store-shelf">
+                <div class="shelf-item s4">⌚</div>
+                <div class="shelf-item s5">🖥️</div>
+                <div class="shelf-item s6">📷</div>
+              </div>
+              <div class="store-label">Test Electra — Est. 2013</div>
+            </div>
+          </div>
+        </div>
+        <div class="about-badge-card">
+          <span class="badge-icon">🏆</span>
+          <div>
+            <strong>Best Electronics Retailer</strong>
+            <small>Hyderabad Tech Awards 2024</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-content">
+        <p class="section-eyebrow">Our Story</p>
+        <h2 class="section-title">Built on Curiosity.<br>Powered by Trust.</h2>
+        <p>Test Electra started in 2013 when founder <strong>Arjun Mehta</strong> turned his love for gadgets into a small shop in Kukatpally with just twelve products on the shelf and a single belief: good technology, explained well, changes lives.</p>
+        <p>Twelve years later we run a 4,500 sq. ft. flagship store, an online catalogue of 1,200+ products, and a service workshop that handles over 800 repairs a month. We never stopped being that shop that takes thirty minutes to explain why a product is right — or wrong — for you.</p>
+
+        <div class="about-values">
+          <div class="value-item">
+            <span class="value-icon">🔍</span>
+            <div>
+              <strong>Honest Advice</strong>
+              <p>We recommend what fits your needs and budget — not the highest-margin item on the shelf.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <span class="value-icon">🔧</span>
+            <div>
+              <strong>In-House Expertise</strong>
+              <p>Our team of 34 includes certified technicians, network engineers, and product specialists.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <span class="value-icon">🌱</span>
+            <div>
+              <strong>Sustainable Choices</strong>
+              <p>We operate a zero-landfill e-waste programme and run all operations on solar power.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-team">
+          <p class="section-eyebrow" style="margin-bottom: 1rem;">The Leadership</p>
+          <div class="team-cards">
+            <div class="team-card">
+              <div class="team-avatar">AM</div>
+              <strong>Arjun Mehta</strong>
+              <span>Founder & CEO</span>
+            </div>
+            <div class="team-card">
+              <div class="team-avatar">PK</div>
+              <strong>Priya Kaushik</strong>
+              <span>Head of Operations</span>
+            </div>
+            <div class="team-card">
+              <div class="team-avatar">RS</div>
+              <strong>Rahul Sinha</strong>
+              <span>Chief Technician</span>
+            </div>
+            <div class="team-card">
+              <div class="team-avatar">DV</div>
+              <strong>Divya Varma</strong>
+              <span>Customer Experience</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section faq-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Got Questions?</p>
+        <h2 class="section-title">Frequently Asked</h2>
+        <p class="section-sub">Quick answers to the things customers ask us most. Can't find yours? <a href="#footer-contact" style="color:var(--accent)">Contact us directly.</a></p>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-item" data-open="false">
+          <button class="faq-q">
+            Do you offer EMI on purchases?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Yes — we partner with four major banks (Electra Finance, Zenith Credit, Nova Bank, and PayEasy) to offer no-cost EMI on purchases above ₹5,000, with tenures from 3 to 24 months. EMI is available both in-store and online.</p>
+          </div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-q">
+            What is your return and exchange policy?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>We offer a 10-day no-questions return window on all products, provided the item is in its original packaging with all accessories. Defective items are replaced or refunded within 24 hours of reporting. Some sealed software and personalised items are non-returnable.</p>
+          </div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-q">
+            How long does a typical repair take?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Screen replacements and battery swaps are usually done in 2–4 hours. More complex repairs like motherboard work or data recovery can take 1–3 business days. You'll receive an SMS update at every stage, and our workshop tracking portal lets you check status in real time.</p>
+          </div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-q">
+            Is there a warranty on repaired devices?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>All repairs carry a 90-day service warranty. If the same fault recurs within that period, we fix it free of charge. We use only OEM-grade or genuine spare parts, and every repair comes with a detailed service invoice.</p>
+          </div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-q">
+            Do you ship products outside Hyderabad?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Yes — we ship across India via Electra Express Logistics. Delivery typically takes 2–5 business days depending on your pin code. Orders above ₹2,999 qualify for free standard shipping. Expedited overnight delivery is available for an additional charge.</p>
+          </div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-q">
+            Can I trade in a device that's damaged?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Absolutely. We accept devices in any condition — working, cracked, water-damaged, or non-functional. Damaged devices receive a lower trade-in value, which our team calculates transparently on the spot. You're under no obligation to proceed if the offer doesn't suit you.</p>
+          </div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-q">
+            Do you carry products from all major brands?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>We stock products from over 40 brands across our categories — including Voltex, NovaTech, Lumina, AetherSound, ZenCore, and more. If you're looking for a specific model we don't currently carry, we can typically source it within 3–5 business days through our distributor network.</p>
+          </div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-q">
+            Are your refurbished products reliable?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>All certified pre-owned devices go through a 47-point inspection covering hardware, battery health, software, and cosmetic condition. They're graded A (like new), B (minor wear), or C (visible wear) — clearly labelled so you know exactly what you're buying. Each carries a 6-month warranty.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer-contact">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="logo">
+          <span class="logo-mark">⚡</span>
+          <span class="logo-text">Test<strong>Electra</strong></span>
+        </a>
+        <p>Hyderabad's most trusted electronics destination since 2013. We make good technology accessible to everyone.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Twitter" class="social-btn">𝕏</a>
+          <a href="#" aria-label="Instagram" class="social-btn">📸</a>
+          <a href="#" aria-label="YouTube" class="social-btn">▶</a>
+          <a href="#" aria-label="LinkedIn" class="social-btn">in</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="#products">Laptops & Computers</a></li>
+          <li><a href="#products">Smartphones</a></li>
+          <li><a href="#products">Audio & Headphones</a></li>
+          <li><a href="#products">Smart Home</a></li>
+          <li><a href="#products">Accessories</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <ul class="contact-list">
+          <li>📍 42, Electra Plaza, Kukatpally,<br>Hyderabad — 500 072</li>
+          <li>📞 +91 40 2345 6789</li>
+          <li>✉️ hello@testelectra.in</li>
+          <li>🕐 Mon–Sat: 10 AM – 9 PM<br>Sun: 11 AM – 7 PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Test Electra. All rights reserved. This is a fictional store created for demonstration purposes.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
